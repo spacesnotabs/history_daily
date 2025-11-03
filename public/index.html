@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>History Daily</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap" />
+    <link rel="stylesheet" href="/styles/main.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="page__header">
+        <div class="header__content">
+          <div>
+            <h1 class="brand">History Daily</h1>
+            <p class="tagline">Discover a remarkable moment from this day in history.</p>
+          </div>
+          <div class="auth">
+            <div id="user-info" class="auth__user"></div>
+            <div class="auth__actions">
+              <button id="login-btn" class="btn btn--primary">Login</button>
+              <button id="logout-btn" class="btn btn--ghost" hidden>Logout</button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="page__main" id="content">
+        <section class="fact-card" id="fact-card" hidden>
+          <div class="fact-card__header">
+            <p class="fact-card__date" id="event-date"></p>
+            <h2 class="fact-card__title" id="event-title"></h2>
+          </div>
+          <p class="fact-card__summary" id="event-summary"></p>
+          <p class="fact-card__importance" id="event-importance"></p>
+          <section class="fact-card__media" id="media-section" hidden>
+            <h3>Media</h3>
+            <div id="media-gallery" class="media-gallery"></div>
+          </section>
+          <section class="fact-card__books" id="books-section" hidden>
+            <h3>Further Reading</h3>
+            <ul id="books-list" class="resource-list"></ul>
+          </section>
+          <section class="fact-card__sources" id="sources-section" hidden>
+            <h3>Sources</h3>
+            <ul id="sources-list" class="resource-list"></ul>
+          </section>
+        </section>
+
+        <section class="loading" id="loading">
+          <span class="loading__spinner" aria-hidden="true"></span>
+          <p>Gathering today's story...</p>
+        </section>
+
+        <section class="error" id="error" hidden>
+          <h2>We hit a snag</h2>
+          <p>Unable to load today's historical highlight. Please try again later.</p>
+        </section>
+      </main>
+
+      <footer class="page__footer">
+        <p>&copy; <span id="year"></span> History Daily. Crafted for curious minds.</p>
+      </footer>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js" integrity="sha384-VvYJ0M8gs1nE/GpNbo8sfwDiRbwJT3ulqN5k4h8EpUVvh1J5zTV6h6McBqs6LW9t" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js" integrity="sha384-Pz/5hGvCff8iofaeyYbe5z8FLKHOXxkEcNWq0IGpS0ueVQd/0ecou0XiWnwMaij7" crossorigin="anonymous"></script>
+    <script src="/scripts/firebase-config.js"></script>
+    <script src="/scripts/app.js" type="module"></script>
+  </body>
+</html>
